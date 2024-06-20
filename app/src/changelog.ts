@@ -156,6 +156,16 @@ export const changelog4: IChangelog = {
 };
 
 export const changelog: IChangelog = {
+    '110.0.0': [
+        {
+            type: 'feature',
+            title: 'Show showmatches in pro tab',
+        },
+        {
+            type: 'feature',
+            title: 'Choose main page (the page that is shown when the app is opened) in settings (iOS, Android)',
+        },
+    ],
     '109.0.0': [
         {
             type: 'bugfix',
