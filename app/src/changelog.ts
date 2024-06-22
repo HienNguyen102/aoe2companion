@@ -159,7 +159,7 @@ export const changelog: IChangelog = {
     '110.0.0': [
         {
             type: 'feature',
-            title: 'Show showmatches in pro tab',
+            title: 'Show showmatches in Pro tab',
         },
         {
             type: 'feature',
