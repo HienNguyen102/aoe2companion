@@ -17,8 +17,8 @@ import { ConditionalTester } from '@app/view/testing/tester';
 import * as eva from '@eva-design/eva';
 import { useFonts, Roboto_400Regular, Roboto_500Medium, Roboto_700Bold, Roboto_900Black } from '@expo-google-fonts/roboto';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { fasr } from '@fortawesome/sharp-regular-svg-icons';
-import { fass } from '@fortawesome/sharp-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 import * as Sentry from '@sentry/react-native';
 import { QueryClient, QueryClientProvider, focusManager } from '@tanstack/react-query';
 import { ApplicationProvider } from '@ui-kitten/components';
@@ -58,7 +58,7 @@ function onAppStateChange(status: AppStateStatus) {
     }
 }
 
-library.add(fass, fasr);
+library.add(fas, far);
 
 const queryClient = new QueryClient({
     defaultOptions: {
