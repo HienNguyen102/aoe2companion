@@ -3,6 +3,39 @@
     "version": ">= 4.1.0"
   },
   "build": {
+    "development": {
+      "extends": "production",
+      "channel": "development-simulator",
+      "developmentClient": true,
+      "distribution": "internal",
+      "android": {
+        "gradleCommand": ":app:assembleDebug"
+      },
+      "ios": {
+        "buildConfiguration": "Debug",
+        "simulator": true
+      }
+    },
+    "development:device": {
+      "extends": "development",
+      "channel": "development-device",
+      "developmentClient": true,
+      "distribution": "internal",
+      "ios": {
+        "buildConfiguration": "Debug",
+        "simulator": false
+      }
+    },
+    "production": {
+      "channel": "production",
+      "env": {},
+      "ios": {
+        "resourceClass": "m-medium"
+      },
+      "android": {
+        "buildType": "apk"
+      }
+    },
     "base": {
       "node": "18.17.0",
       "ios": {

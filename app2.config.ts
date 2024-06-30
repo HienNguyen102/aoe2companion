@@ -33,15 +33,15 @@ const runtimeVersionCode = runtimeVersionParts[0] + runtimeVersionParts[1].padSt
 
 const isProdBuild = process.env.EAS_BUILD_PROFILE?.includes('production');
 const isRunningInEasCI = process.env.EAS_BUILD_RUNNER === 'eas-build';
-const sentryConfigPlugins = isProdBuild && isRunningInEasCI ? [sentryConfigPlugin] : [];
+const sentryConfigPlugins = [];
 
 export default {
     "expo": {
         "name": "AoE II Companion",
         "description": "Track your AoE II Definitive Edition games. This app fetches information about your games so you are always up-to-date.",
-        "slug": "aoe2companion",
+        "slug": "dautien",
         "scheme": "aoe2companion",
-        "owner": "aoecompanion",
+        "owner": "hien102",
         "platforms": [
             "ios",
             "android",
@@ -51,24 +51,7 @@ export default {
             "website": "aoe2companion.com",
             "experienceId": "@denniske1001/aoe2companion",
             "eas": {
-                "projectId": "668efd6d-8482-4ad8-8235-e1e94b7d508e",
-                "build": {
-                    "experimental": {
-                        "ios": {
-                            "appExtensions": [
-                                {
-                                    "targetName": "widget",
-                                    "bundleIdentifier": "com.aoe2companion.widget",
-                                    "entitlements": {
-                                        "com.apple.security.application-groups": [
-                                            "group.com.aoe2companion.widget"
-                                        ]
-                                    }
-                                }
-                            ]
-                        }
-                    }
-                }
+                "projectId": "fc431504-0a2f-4aa1-ba63-adae6c71c943"
             },
         },
         "userInterfaceStyle": "automatic",
@@ -82,12 +65,7 @@ export default {
         "splash": splash,
         "updates": {
             "fallbackToCacheTimeout": 0,
-            "url": "https://update.aoe2companion.com/api/manifest",
-            "codeSigningCertificate": "./update/certificate.pem",
-            "codeSigningMetadata": {
-                "keyid": "main",
-                "alg": "rsa-v1_5-sha256"
-            }
+            "url": "https://u.expo.dev/fc431504-0a2f-4aa1-ba63-adae6c71c943"
         },
         "assetBundlePatterns": [
             "node_modules/**",
@@ -125,18 +103,6 @@ export default {
             ],
             ...sentryConfigPlugins,
             [
-                "./app.plugin.js",
-                {
-                    "widgetName": "widget",
-                    "ios": {
-                        "devTeamId": "HAFGZBHF9M",
-                        "appGroupIdentifier": "group.com.aoe2companion.widget",
-                        "topLevelFiles": ["Assets.xcassets", "WidgetBundle.swift"],
-                        "topLevelFolders": ["Widgets", "Helpers"]
-                    }
-                }
-            ],
-            [
                 "expo-build-properties",
                 {
                     "ios": {
@@ -161,7 +127,7 @@ export default {
         "ios": {
             "userInterfaceStyle": "automatic",
             "icon": "./app/assets/icon-adaptive-no-alpha.png",
-            "bundleIdentifier": "com.aoe2companion",
+            "bundleIdentifier": "vn.hac.aoe2companion",
             "buildNumber": runtimeVersion,
             "supportsTablet": false,
             "config": {
@@ -172,11 +138,6 @@ export default {
                 "NSSupportsLiveActivities": true,
                 "NSUserActivityTypes": ["BuildsConfigurationIntent"],
                 "UIBackgroundModes": ["remote-notification"]
-            },
-            "entitlements": {
-                "com.apple.security.application-groups": [
-                    "group.com.aoe2companion.widget"
-                ]
             },
             "splash": splash,
         },
